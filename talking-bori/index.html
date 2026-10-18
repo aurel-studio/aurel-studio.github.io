@@ -22,6 +22,8 @@
   html, body { margin: 0; height: 100%; overflow: hidden; background: #c98a4f; color: var(--ink); user-select: none; -webkit-user-select: none;
     font-family: "Jua", "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
   #bg { position: fixed; inset: 0; background: url(bori_bg.jpg) center 40% / cover no-repeat; transition: filter .8s; }
+  /* 가로(태블릿): 세로 그림을 넓게 펴면 확대되므로 바닥이 아래쪽에 오도록 그림을 내림 */
+  @media (orientation: landscape) { #bg { background-position: center 69%; } }
   body.night #bg { filter: brightness(.45) saturate(.7) hue-rotate(-12deg); }
   #night { position: fixed; inset: 0; background: radial-gradient(ellipse at 50% 45%, rgba(40,30,90,.15), rgba(20,15,60,.55)); opacity: 0; transition: opacity .8s; pointer-events: none; }
   body.night #night { opacity: 1; }
@@ -130,10 +132,11 @@
   <button class="close" id="closeSet">닫기</button>
 </div></div>
 
+<!-- three.js r160 을 lib/ 에 함께 넣어 둠(앱에서 인터넷 없이 돌게) -->
 <script type="importmap">
 { "imports": {
-  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  "three": "./lib/three.module.js",
+  "three/addons/": "./lib/addons/"
 } }
 </script>
 <script type="module">
@@ -165,10 +168,11 @@ shadow.rotation.x = -Math.PI / 2; shadow.position.set(0.04, 0.002, 0.02); scene.
 let visH = 2;
 function resize() {
   const w = innerWidth, h = innerHeight; renderer.setSize(w, h); camera.aspect = w / h;
-  const share = Math.min(0.5, 0.5 * (w / h) / 0.5);          // 가로가 좁으면(아주 길쭉한 폰) 조금 작게
+  const land = w > h;
+  const share = land ? 0.56 : Math.min(0.5, 0.5 * (w / h) / 0.5);   // 세로 폰: 가로가 좁으면 조금 작게 / 가로 태블릿: 조금 크게
   visH = 1 / share;
   const dist = (visH / 2) / Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  const footScreen = 0.70;                                    // 화면 위에서부터
+  const footScreen = land ? 0.76 : 0.70;                      // 발 위치(화면 위에서부터)
   const targetY = 0 + (footScreen - 0.5) * visH;              // 화면 가운데에 올 높이
   camera.position.set(0, targetY + 0.35, dist); camera.lookAt(0, targetY, 0); camera.updateProjectionMatrix();
 }
