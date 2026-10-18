@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>학습놀이 — 3~12살 수학·한글·영어 놀이 학습</title>
+<meta name="description" content="놀면서 배우는 수학·한글·영어. 나이에 맞춘 140가지 놀이, 따라쓰기, 그림책. 광고 없음, 인터넷 없이도 OK.">
+<meta property="og:title" content="학습놀이 — 놀면서 배우는 수학·한글·영어">
+<meta property="og:description" content="3~12살 나이 맞춤 놀이 학습 앱. 광고 없음 · 인터넷 없이도 놀이 가능.">
+<meta property="og:image" content="img/icon.png">
+<link rel="icon" href="img/icon.png">
+<style>
+@font-face{font-family:Jua;src:url(img/Jua.woff2) format('woff2');font-display:swap}
+:root{--ink:#45364f;--sub:#7a6a86;--pink:#ff5c9f;--pink2:#ff8fbd;--mint:#2fbf8f;--sky:#4aa8f0;--sun:#ffc23d;--card:#fff;--line:#f1e4ee;--bg:#fff8f1;--sh:0 14px 34px rgba(120,70,150,.12),0 3px 0 rgba(120,70,150,.05)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#f3eaf6;--sub:#c5b6cf;--card:#2b2333;--line:#3d3247;--bg:#1d1724;--sh:0 14px 34px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--ink:#f3eaf6;--sub:#c5b6cf;--card:#2b2333;--line:#3d3247;--bg:#1d1724;--sh:0 14px 34px rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.j{font-family:Jua,-apple-system,'Malgun Gothic',sans-serif;font-weight:normal}
+header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:12px;height:64px}
+header.top img{width:38px;height:38px;border-radius:10px}
+header.top b{font-size:22px}
+header.top nav{margin-left:auto;display:flex;gap:18px;font-size:15px}
+header.top nav a{text-decoration:none;color:var(--sub)}
+header.top nav a:hover{color:var(--pink)}
+.hero{position:relative;overflow:hidden;background:#fdeee0 url(img/bg_title.webp) center/cover}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,248,241,.94) 0%,rgba(255,248,241,.75) 45%,rgba(255,248,241,0) 75%)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center;min-height:560px;padding-top:40px;padding-bottom:40px}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.15;margin:0 0 14px;color:#45364f}
+.hero h1 em{font-style:normal;color:var(--pink)}
+.hero p{font-size:clamp(17px,2vw,21px);color:#6a5a76;margin:0 0 24px;max-width:520px}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.store{display:inline-flex;align-items:center;gap:10px;background:#211a27;color:#fff;text-decoration:none;border-radius:14px;padding:10px 18px;min-width:180px}
+.store small{display:block;font-size:11px;opacity:.75;line-height:1}.store span{font-size:18px;line-height:1.2}
+.store svg{width:26px;height:26px;flex:none}
+.soon{font-size:13px;color:#7a6a86;margin-top:10px}
+.mons{position:relative;height:420px}
+.mons img{position:absolute;filter:drop-shadow(0 16px 14px rgba(80,40,90,.22));animation:bob 4s ease-in-out infinite}
+.mons img:nth-child(1){width:42%;left:4%;top:18%}
+.mons img:nth-child(2){width:36%;left:48%;top:4%;animation-delay:-1.3s}
+.mons img:nth-child(3){width:38%;left:44%;top:50%;animation-delay:-2.6s}
+@keyframes bob{50%{transform:translateY(-12px)}}
+section{padding:72px 0}
+.kicker{color:var(--pink);font-size:15px;letter-spacing:.04em;margin:0 0 6px}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 12px;line-height:1.25}
+.lead{font-size:18px;color:var(--sub);max-width:720px;margin:0 0 34px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border-radius:28px;padding:24px;box-shadow:var(--sh);border:1px solid var(--line)}
+.card .ic{width:64px;height:64px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:34px;margin-bottom:12px}
+.card h3{margin:0 0 6px;font-size:21px}
+.card p{margin:0;color:var(--sub);font-size:16px}
+.ages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.age{border-radius:28px;padding:26px;color:#fff;box-shadow:var(--sh)}
+.age h3{font-size:26px;margin:0 0 6px}
+.age ul{margin:0;padding-left:20px;font-size:16px;line-height:1.75}
+.a1{background:linear-gradient(160deg,#ffb36b,#ff7d6b)}.a2{background:linear-gradient(160deg,#6cc8ff,#5b8df0)}.a3{background:linear-gradient(160deg,#8be0b0,#3fb98a)}
+.games{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.game{background:var(--card);border-radius:24px;padding:16px;text-align:center;box-shadow:var(--sh);border:1px solid var(--line)}
+.game img{width:84px;height:84px;object-fit:contain}
+.game b{display:block;font-size:17px;margin-top:6px}
+.game span{font-size:14px;color:var(--sub)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.trust div{background:var(--card);border-radius:22px;padding:18px;text-align:center;border:1px solid var(--line)}
+.trust b{display:block;font-size:30px}
+.trust span{font-size:15px;color:var(--sub)}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:860px}
+.plan{background:var(--card);border-radius:30px;padding:28px;box-shadow:var(--sh);border:2px solid var(--line)}
+.plan.pro{border-color:var(--pink2);position:relative}
+.plan.pro::before{content:'추천';position:absolute;top:-14px;right:22px;background:var(--pink);color:#fff;border-radius:999px;padding:3px 14px;font-size:14px}
+.plan h3{margin:0;font-size:22px}
+.plan .amt{font-size:40px;margin:6px 0 2px}
+.plan .amt small{font-size:17px;color:var(--sub)}
+.plan ul{padding-left:20px;margin:14px 0 0;line-height:1.8}
+.fine{font-size:14px;color:var(--sub);margin-top:14px;max-width:860px}
+.faq details{background:var(--card);border-radius:20px;padding:16px 20px;margin-bottom:10px;border:1px solid var(--line)}
+.faq summary{cursor:pointer;font-size:18px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:'＋ ';color:var(--pink)}
+.faq details[open] summary::before{content:'－ '}
+.faq p{margin:10px 0 0;color:var(--sub)}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:14px;color:var(--sub)}
+footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:16px;margin-left:auto}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .hero::after{background:linear-gradient(180deg,rgba(255,248,241,.92),rgba(255,248,241,.8))}
+  .mons{height:260px}
+  .grid3,.ages{grid-template-columns:1fr}
+  .games,.trust{grid-template-columns:repeat(2,1fr)}
+  .price{grid-template-columns:1fr}
+  header.top nav{display:none}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><img src="img/icon.png" alt=""><b class="j">학습놀이</b>
+  <nav><a href="#features">특징</a><a href="#ages">나이별</a><a href="#games">놀이</a><a href="#price">요금</a><a href="#faq">자주 묻는 질문</a><a href="support.html">문의</a></nav></div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <p class="kicker j">3~12살 수학·한글·영어</p>
+    <h1 class="j">놀다 보면<br><em>저절로 배우는</em><br>우리 아이 첫 공부</h1>
+    <p>나이에 꼭 맞춘 놀이 140여 가지와 따라쓰기·그림책. 글을 몰라도 그림과 목소리로 혼자 할 수 있어요. 광고 없이, 인터넷 없이도.</p>
+    <div class="badges">
+      <a class="store" href="#" aria-label="Google Play에서 받기"><svg viewBox="0 0 24 24" fill="#fff"><path d="M3.6 2.2 13.4 12l-9.8 9.8c-.4-.2-.6-.6-.6-1.1V3.3c0-.5.2-.9.6-1.1Zm11.2 11.2 2.3 2.3-10.6 6.1 8.3-8.4Zm3.7-3.7 2.6 1.5c.8.5.8 1.6 0 2.1l-2.6 1.5-2.6-2.6 2.6-2.5ZM6.5 2.2l10.6 6.1-2.3 2.3-8.3-8.4Z"/></svg><div><small>다운로드하기</small><span>Google Play</span></div></a>
+      <a class="store" href="#" aria-label="App Store에서 받기"><svg viewBox="0 0 24 24" fill="#fff"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7ZM14.2 5.6c.6-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4Z"/></svg><div><small>다운로드하기</small><span>App Store</span></div></a>
+    </div>
+    <p class="soon">스토어 출시 준비 중이에요 · 처음 7일 무료 체험</p>
+  </div>
+  <div class="mons" aria-hidden="true"><img src="img/m1_1.webp" alt=""><img src="img/k1_1.webp" alt=""><img src="img/e1_1.webp" alt=""></div>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <p class="kicker j">왜 학습놀이일까요</p>
+  <h2 class="j">공부가 아니라 놀이로 시작해요</h2>
+  <p class="lead">글자를 아직 못 읽는 아이도 그림을 보고, 목소리를 듣고, 손으로 끌고 눌러 혼자 해낼 수 있게 만들었어요.</p>
+  <div class="grid3">
+    <div class="card"><div class="ic" style="background:#ffe9d6">🎂</div><h3 class="j">나이에 꼭 맞춘 난이도</h3><p>아이 나이를 고르면 할 수 있는 놀이만 보여요. 잘하면 한 단계 올라가고, 어려워하면 내려가요.</p></div>
+    <div class="card"><div class="ic" style="background:#e3f3ff">🔊</div><h3 class="j">글 몰라도 OK</h3><p>모든 문제와 보기를 목소리로 읽어 주고, 3~5살은 글자 대신 그림으로 골라요. 녹음된 목소리 9천여 개.</p></div>
+    <div class="card"><div class="ic" style="background:#e6f8ee">✏️</div><h3 class="j">진짜 따라쓰기</h3><p>획 순서와 방향까지 확인해 주는 따라쓰기. 숫자·자음·모음·알파벳, 우리 가족 이름까지.</p></div>
+    <div class="card"><div class="ic" style="background:#fff3cc">🧩</div><h3 class="j">손이 바쁜 놀이</h3><p>톡톡 세기, 그림자 맞추기, 퍼즐, 점 잇기, 색깔 바구니… 놀이마다 손놀림이 달라 지루하지 않아요.</p></div>
+    <div class="card"><div class="ic" style="background:#f3e8ff">🥚</div><h3 class="j">계속하고 싶은 보상</h3><p>놀이를 마치면 몬스터 알을 받아 키우고, 방을 꾸며요. 매일 조금씩 하는 습관이 생겨요.</p></div>
+    <div class="card"><div class="ic" style="background:#ffe4ee">🛡️</div><h3 class="j">안심하고 맡기는 앱</h3><p>광고 없음, 외부 링크 막힘, 결제·설정은 부모님 확인 뒤에만. 기록은 기기 안에만 저장해요.</p></div>
+  </div>
+</div></section>
+
+<section id="ages" style="background:color-mix(in srgb,var(--pink2) 10%,var(--bg))"><div class="wrap">
+  <p class="kicker j">나이별로 이렇게 달라져요</p>
+  <h2 class="j">우리 아이 나이에 딱</h2>
+  <p class="lead">같은 앱이라도 아이 나이에 따라 화면과 문제가 달라져요. 부모님 메뉴에서 과목별 난이도도 조절할 수 있어요.</p>
+  <div class="ages">
+    <div class="age a1"><h3 class="j">3~5살</h3><ul><li>그림과 목소리로 고르는 놀이</li><li>수 세기·크기 비교·색깔 분류</li><li>자음·모음·알파벳 소리</li><li>꼬마 놀이터 (퍼즐·점 잇기)</li></ul></div>
+    <div class="age a2"><h3 class="j">6~8살</h3><ul><li>덧셈·뺄셈·시계·돈</li><li>받침·낱말·문장 만들기</li><li>파닉스·사이트 워드</li><li>60초 도전·몬스터 배틀</li></ul></div>
+    <div class="age a3"><h3 class="j">9~12살</h3><ul><li>곱셈·나눗셈·분수·소수</li><li>맞춤법·속담·긴 글 읽기</li><li>영어 문장·문법</li><li>초등 교육과정 단계별</li></ul></div>
+  </div>
+</div></section>
+
+<section id="games"><div class="wrap">
+  <p class="kicker j">놀이 미리 보기</p>
+  <h2 class="j">140가지가 넘는 놀이</h2>
+  <p class="lead">수학 섬·한글 섬·영어 섬을 여행하며 마을마다 다른 놀이를 만나요.</p>
+  <div class="games">
+    <div class="game"><img src="img/g_balloon.webp" alt=""><b class="j">풍선 터뜨리기</b><span>소리를 듣고 정답 풍선 톡!</span></div>
+    <div class="game"><img src="img/g_memory.webp" alt=""><b class="j">짝 맞추기</b><span>그림·낱말 카드 짝 찾기</span></div>
+    <div class="game"><img src="img/g_word.webp" alt=""><b class="j">낱말 만들기</b><span>글자 조각으로 낱말 완성</span></div>
+    <div class="game"><img src="img/g_battle.webp" alt=""><b class="j">몬스터 배틀</b><span>문제를 풀어 몬스터 잡기</span></div>
+    <div class="game"><img src="img/b01_cover.webp" alt="" style="border-radius:14px"><b class="j">그림책 서재</b><span>목소리로 읽어 주는 동화</span></div>
+    <div class="game"><img src="img/k3_2.webp" alt=""><b class="j">따라쓰기</b><span>획 순서까지 확인</span></div>
+    <div class="game"><img src="img/e2_2.webp" alt=""><b class="j">영어 듣기</b><span>듣고 그림 찾기</span></div>
+    <div class="game"><img src="img/m2_2.webp" alt=""><b class="j">수학 섬</b><span>세기부터 분수까지</span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="trust">
+  <div><b class="j">140+</b><span>나이 맞춤 놀이</span></div><div><b class="j">9,000+</b><span>녹음된 목소리</span></div><div><b class="j">0</b><span>광고</span></div><div><b class="j">오프라인</b><span>인터넷 없이도</span></div>
+</div></div></section>
+
+<section id="price" style="background:color-mix(in srgb,var(--sky) 8%,var(--bg))"><div class="wrap">
+  <p class="kicker j">요금</p>
+  <h2 class="j">부담 없이 시작하세요</h2>
+  <p class="lead">무료로 일부 놀이를 계속 할 수 있고, 구독하면 모든 놀이가 열려요.</p>
+  <div class="price">
+    <div class="plan"><h3 class="j">무료</h3><div class="amt j">0원</div><ul><li>과목마다 나이에 맞는 놀이 3가지</li><li>꼬마 놀이 3가지 · 풍선 · 짝 맞추기</li><li>숫자·자음·모음·알파벳 따라쓰기</li><li>색칠·피아노·그림책</li></ul></div>
+    <div class="plan pro"><h3 class="j">전체 이용권</h3><div class="amt j">3,000원 <small>/ 월</small></div><ul><li><b>처음 7일 무료 체험</b></li><li>140가지 놀이 전부</li><li>모험 지도·몬스터 배틀·같이 하기</li><li>형제자매 프로필 함께 사용</li></ul></div>
+  </div>
+  <p class="fine">구독은 Google Play / App Store 계정으로 결제돼요. 무료 체험이 끝나면 매달 자동 갱신되며, 체험 기간에 해지하면 요금이 청구되지 않아요. 해지는 스토어의 구독 관리에서 언제든 할 수 있어요. 무료 체험은 계정당 한 번 제공돼요.</p>
+</div></section>
+
+<section id="faq"><div class="wrap" style="max-width:860px">
+  <p class="kicker j">자주 묻는 질문</p>
+  <h2 class="j">궁금한 점</h2>
+  <div class="faq">
+    <details><summary>글을 못 읽는 아이도 할 수 있나요?</summary><p>네. 5살 이하는 글자 대신 그림 보기로 바뀌고, 모든 문제와 보기를 목소리로 읽어 줘요. 글자 보기에는 🔊 단추가 있어 눌러서 들어 볼 수 있어요.</p></details>
+    <details><summary>인터넷이 없어도 되나요?</summary><p>네. 그림과 목소리가 모두 앱 안에 들어 있어 비행기·차 안에서도 할 수 있어요. 구독 확인을 위해 가끔 인터넷에 연결해 주세요(마지막 확인 뒤 7일까지 오프라인 이용 가능).</p></details>
+    <details><summary>형제·자매가 같이 쓸 수 있나요?</summary><p>한 기기에서 아이마다 프로필을 만들 수 있고, 하나의 구독으로 모든 프로필이 함께 이용해요. '같이 하기'로 번갈아 문제를 풀 수도 있어요.</p></details>
+    <details><summary>아이가 실수로 결제할 수 있나요?</summary><p>아니요. 결제 화면과 부모님 메뉴는 어른만 풀 수 있는 곱셈 문제를 맞혀야 열려요. 스토어 결제 확인도 한 번 더 거쳐요.</p></details>
+    <details><summary>어떤 정보를 수집하나요?</summary><p>저희 서버로 보내는 정보는 없어요. 아이 이름과 학습 기록은 기기 안에만 저장돼요. 자세한 내용은 <a href="../privacy/kidslearn/">개인정보처리방침</a>을 확인해 주세요.</p></details>
+    <details><summary>구독 해지는 어떻게 하나요?</summary><p>안드로이드: Play 스토어 → 프로필 → 결제 및 정기 결제 → 정기 결제. 아이폰: 설정 → 이름 → 구독. 앱의 부모님 메뉴 → 💳 구독에서도 바로 갈 수 있어요.</p></details>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Aurel Studio · 학습놀이</span>
+  <nav><a href="../privacy/kidslearn/">개인정보처리방침</a><a href="terms.html">이용약관</a><a href="support.html">문의</a></nav></div></footer>
+</body>
+</html>
