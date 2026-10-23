@@ -88,7 +88,23 @@ h2{font-size:clamp(28px,4vw,40px);margin:0 0 12px;line-height:1.25}
 footer{border-top:1px solid var(--line);padding:30px 0 40px;font-size:14px;color:var(--sub)}
 footer .wrap{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 footer nav{display:flex;gap:16px;margin-left:auto}
+.newgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center;margin-bottom:22px}
+.report{background:var(--card);border-radius:28px;padding:22px 24px;box-shadow:var(--sh);border:1px solid var(--line)}
+.report h3{margin:0 0 4px;font-size:20px}
+.report .who{font-size:14px;color:var(--sub);margin:0 0 14px}
+.bar{display:grid;grid-template-columns:96px 1fr 64px;gap:10px;align-items:center;font-size:15px;margin:8px 0}
+.bar i{display:block;height:12px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i b{display:block;height:100%;border-radius:99px;background:var(--mint)}
+.bar.help i b{background:var(--sun)}
+.bar em{font-style:normal;color:var(--sub);font-size:13px;text-align:right;white-space:nowrap}
+.tag{display:inline-block;font-size:13px;border-radius:99px;padding:2px 10px;margin:10px 6px 0 0;background:color-mix(in srgb,var(--mint) 18%,transparent)}
+.tag.help{background:color-mix(in srgb,var(--sun) 26%,transparent)}
+.newlist{margin:0;padding:0;list-style:none}
+.newlist li{padding:10px 0 10px 34px;position:relative;font-size:17px;border-bottom:1px dashed var(--line)}
+.newlist li::before{content:'✓';position:absolute;left:4px;top:9px;width:22px;height:22px;border-radius:50%;background:var(--pink);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center}
+.note{font-size:13px;color:var(--sub);margin-top:12px}
 @media (max-width:860px){
+  .newgrid{grid-template-columns:1fr}
   .hero .wrap{grid-template-columns:1fr;min-height:0}
   .hero::after{background:linear-gradient(180deg,rgba(255,248,241,.92),rgba(255,248,241,.8))}
   .mons{height:260px}
@@ -103,7 +119,7 @@ footer nav{display:flex;gap:16px;margin-left:auto}
 </head>
 <body>
 <header class="top"><div class="wrap"><img src="img/icon.png" alt=""><b class="j">학습놀이</b>
-  <nav><a href="#features">특징</a><a href="#ages">나이별</a><a href="#games">놀이</a><a href="#books">그림책</a><a href="#price">요금</a><a href="#faq">자주 묻는 질문</a><a href="support.html">문의</a></nav></div></header>
+  <nav><a href="#features">특징</a><a href="#new">새 기능</a><a href="#ages">나이별</a><a href="#games">놀이</a><a href="#books">그림책</a><a href="#price">요금</a><a href="#faq">자주 묻는 질문</a><a href="support.html">문의</a></nav></div></header>
 
 <div class="hero"><div class="wrap">
   <div>
@@ -131,6 +147,38 @@ footer nav{display:flex;gap:16px;margin-left:auto}
     <div class="card"><div class="ic" style="background:#f3e8ff">🥚</div><h3 class="j">계속하고 싶은 보상</h3><p>놀이를 마치면 몬스터 알을 받아 키우고, 방을 꾸며요. 매일 조금씩 하는 습관이 생겨요.</p></div>
     <div class="card"><div class="ic" style="background:#ffe4ee">🛡️</div><h3 class="j">안심하고 맡기는 앱</h3><p>광고 없음, 외부 링크 막힘, 결제·설정은 부모님 확인 뒤에만. 기록은 기기 안에만 저장해요.</p></div>
   </div>
+</div></section>
+
+<section id="new" style="background:color-mix(in srgb,var(--mint) 8%,var(--bg))"><div class="wrap">
+  <p class="kicker j">곧 업데이트</p>
+  <h2 class="j">놀기만 했는데, 성장 리포트가 와요</h2>
+  <p class="lead">아이는 평소처럼 놀고, 부모님은 리포트로 확인해요. 무엇을 잘하고 어디를 도와주면 좋을지 영역별로 알려 줘요.</p>
+  <div class="newgrid">
+    <div class="report" aria-label="성장 리포트 예시 화면">
+      <h3 class="j">📈 서아의 성장 리포트</h3>
+      <p class="who">예시 화면 · 6살 · 최근 4주</p>
+      <div class="bar"><span>수 세기</span><i><b style="width:88%"></b></i><em>잘해요</em></div>
+      <div class="bar"><span>첫소리 찾기</span><i><b style="width:80%"></b></i><em>잘해요</em></div>
+      <div class="bar"><span>알파벳 소리</span><i><b style="width:64%"></b></i><em>자라는 중</em></div>
+      <div class="bar help"><span>받침 읽기</span><i><b style="width:38%"></b></i><em>도와줘요</em></div>
+      <div class="bar help"><span>시계 보기</span><i><b style="width:30%"></b></i><em>도와줘요</em></div>
+      <span class="tag">👍 수 세기가 빨라졌어요</span><span class="tag help">🤝 받침 있는 낱말을 같이 읽어 주세요</span>
+    </div>
+    <ul class="newlist">
+      <li><b>26개 영역별</b> 잘하는 것과 도와줄 것</li>
+      <li><b>6개월 그래프</b>로 보는 우리 아이 변화</li>
+      <li><b>5분 진단</b>으로 지금 수준 빠르게 확인</li>
+      <li><b>오답 몬스터</b> — 틀린 문제를 1·3·7일 뒤에 다시 만나요</li>
+      <li><b>초등 입학 준비</b> 체크리스트</li>
+      <li>리포트도 <b>기기 안에서만</b> 만들어져요</li>
+    </ul>
+  </div>
+  <div class="grid3">
+    <div class="card"><div class="ic" style="background:#e6f8ee">🗓️</div><h3 class="j">30일 코스</h3><p>한글, 파닉스, 수 감각을 하루 하나씩. 오늘 할 것이 정해져 있어 매일 습관이 돼요.</p></div>
+    <div class="card"><div class="ic" style="background:#f3e8ff">🧠</div><h3 class="j">발달 놀이 5가지</h3><p>순서 기억, 멈춰 놀이, 마음 읽기, 선 따라가기, 소리 내어 말하기. 공부 앞에 필요한 생각하는 힘을 놀이로 길러요.</p></div>
+    <div class="card"><div class="ic" style="background:#fff3cc">🏠</div><h3 class="j">화면 밖에서도 함께</h3><p>오늘의 집 미션과 동화 이야기 나눔 카드로, 앱을 끈 뒤에도 부모님과 이야기를 이어 가요.</p></div>
+  </div>
+  <p class="note">영역은 누리과정과 2022 개정 교육과정의 영역을 참고해 나눴어요. 리포트는 집에서 아이를 돕기 위한 참고 자료예요.</p>
 </div></section>
 
 <section id="ages" style="background:color-mix(in srgb,var(--pink2) 10%,var(--bg))"><div class="wrap">
@@ -190,7 +238,7 @@ footer nav{display:flex;gap:16px;margin-left:auto}
   <p class="lead">무료로 일부 놀이를 계속 할 수 있고, 구독하면 모든 놀이가 열려요.</p>
   <div class="price">
     <div class="plan"><h3 class="j">무료</h3><div class="amt j">0원</div><ul><li>과목마다 나이에 맞는 놀이 3가지</li><li>꼬마 놀이 3가지 · 풍선 · 짝 맞추기</li><li>숫자·자음·모음·알파벳 따라쓰기</li><li>색칠·피아노·그림책 일부</li></ul></div>
-    <div class="plan pro"><h3 class="j">전체 이용권</h3><div class="amt j">3,000원 <small>/ 월</small></div><ul><li><b>처음 7일 무료 체험</b></li><li>140가지 놀이 전부 · 동화 30권</li><li>모험 지도·몬스터 배틀·같이 하기</li><li>형제자매 프로필 함께 사용</li></ul></div>
+    <div class="plan pro"><h3 class="j">전체 이용권</h3><div class="amt j">3,000원 <small>/ 월</small></div><ul><li><b>처음 7일 무료 체험</b></li><li>140가지 놀이 전부 · 동화 30권</li><li>모험 지도·몬스터 배틀·같이 하기</li><li>형제자매 프로필 함께 사용</li><li>성장 리포트·30일 코스·발달 놀이 <small>(곧 업데이트)</small></li></ul></div>
   </div>
   <p class="fine">구독은 Google Play / App Store 계정으로 결제돼요. 무료 체험이 끝나면 매달 자동 갱신되며, 체험 기간에 해지하면 요금이 청구되지 않아요. 해지는 스토어의 구독 관리에서 언제든 할 수 있어요. 무료 체험은 계정당 한 번 제공돼요.</p>
 </div></section>
@@ -205,6 +253,7 @@ footer nav{display:flex;gap:16px;margin-left:auto}
     <details><summary>로그인이나 회원가입이 필요한가요?</summary><p>아니요. 회원가입 없이 바로 시작해요. 구독은 Google Play·App Store 계정에 저장되어, 앱을 다시 설치하거나 새 기기에서도 같은 계정이면 '구매 복원'으로 그대로 이어져요.</p></details>
     <details><summary>기기를 바꾸면 학습 기록은 어떻게 되나요?</summary><p>아이 개인정보를 서버에 보내지 않기 위해 학습 기록(별·몬스터·진도)은 기기 안에만 저장해요. 그래서 새 기기로 기록이 자동으로 옮겨지지는 않아요. 구독은 계정으로 그대로 이어져요.</p></details>
     <details><summary>아이가 실수로 결제할 수 있나요?</summary><p>아니요. 결제 화면과 부모님 메뉴는 어른만 풀 수 있는 곱셈 문제를 맞혀야 열려요. 스토어 결제 확인도 한 번 더 거쳐요.</p></details>
+    <details><summary>성장 리포트는 어떻게 만들어지나요?</summary><p>아이가 놀이에서 푼 문제 기록을 기기 안에서 영역별로 모아, 잘하는 것과 도와주면 좋을 것을 보여 줘요. 리포트도 서버로 보내지 않아요. 곧 업데이트로 만나요.</p></details>
     <details><summary>어떤 정보를 수집하나요?</summary><p>저희 서버로 보내는 정보는 없어요. 아이 이름과 학습 기록은 기기 안에만 저장돼요. 자세한 내용은 <a href="../privacy/kidslearn/">개인정보처리방침</a>을 확인해 주세요.</p></details>
     <details><summary>구독 해지는 어떻게 하나요?</summary><p>안드로이드: Play 스토어 → 프로필 → 결제 및 정기 결제 → 정기 결제. 아이폰: 설정 → 이름 → 구독. 앱의 부모님 메뉴 → 💳 구독에서도 바로 갈 수 있어요.</p></details>
   </div>
