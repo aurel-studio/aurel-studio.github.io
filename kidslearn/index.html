@@ -23,6 +23,8 @@ header.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--b
 header.top .wrap{display:flex;align-items:center;gap:12px;height:64px}
 header.top img{width:38px;height:38px;border-radius:10px}
 header.top b{font-size:22px}
+header.top .brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}
+header.top .brand:hover b{color:var(--pink)}
 header.top nav{margin-left:auto;display:flex;gap:18px;font-size:15px}
 header.top nav a{text-decoration:none;color:var(--sub)}
 header.top nav a:hover{color:var(--pink)}
@@ -118,7 +120,7 @@ footer nav{display:flex;gap:16px;margin-left:auto}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><img src="img/icon.png" alt=""><b class="j">학습놀이</b>
+<header class="top"><div class="wrap"><a class="brand" href="./" aria-label="학습놀이 처음 화면으로"><img src="img/icon.png" alt=""><b class="j">학습놀이</b></a>
   <nav><a href="#features">특징</a><a href="#new">새 기능</a><a href="#ages">나이별</a><a href="#games">놀이</a><a href="#books">그림책</a><a href="#price">요금</a><a href="#safe">안심</a><a href="#faq">자주 묻는 질문</a><a href="support.html">문의</a></nav></div></header>
 
 <div class="hero"><div class="wrap">
